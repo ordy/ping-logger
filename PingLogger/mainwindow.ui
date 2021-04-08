@@ -12,8 +12,8 @@
   </property>
   <property name="font">
    <font>
-    <family>Consolas</family>
-    <pointsize>8</pointsize>
+    <family>Fira Sans</family>
+    <pointsize>9</pointsize>
     <weight>50</weight>
     <bold>false</bold>
     <stylestrategy>PreferDefault</stylestrategy>
@@ -21,7 +21,14 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Ping Tester - Beta 0.9</string>
+   <string>Ping Logger</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons.qrc">
+    <normaloff>:/new/icons/icon4.svg</normaloff>:/new/icons/icon4.svg</iconset>
+  </property>
+  <property name="toolTipDuration">
+   <number>3</number>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -85,7 +92,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -101,7 +108,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -127,7 +134,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup_2</string>
+         <string notr="true">buttonGroup_2</string>
         </attribute>
        </widget>
       </item>
@@ -140,7 +147,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup_2</string>
+         <string notr="true">buttonGroup_2</string>
         </attribute>
        </widget>
       </item>
@@ -205,9 +212,13 @@
        <widget class="QTextBrowser" name="textBrowser">
         <property name="font">
          <font>
-          <family>Consolas</family>
+          <family>Cascadia Code</family>
           <pointsize>10</pointsize>
-          <italic>true</italic>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -219,11 +230,13 @@
        <widget class="QTextBrowser" name="textBrowser_res">
         <property name="font">
          <font>
-          <family>Consolas</family>
+          <family>Cascadia Code</family>
           <pointsize>10</pointsize>
           <weight>50</weight>
-          <italic>true</italic>
+          <italic>false</italic>
           <bold>false</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -261,8 +274,12 @@
         </property>
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -277,9 +294,13 @@
        <widget class="QLabel" name="max_label">
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <italic>true</italic>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -294,8 +315,12 @@
        <widget class="QLineEdit" name="max_line">
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -310,9 +335,13 @@
        <widget class="QLabel" name="avg_label">
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <italic>true</italic>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="text">
@@ -324,8 +353,12 @@
        <widget class="QLineEdit" name="avg_line">
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -340,9 +373,13 @@
        <widget class="QLabel" name="min_label">
         <property name="font">
          <font>
+          <family>Roboto</family>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <italic>true</italic>
           <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="styleSheet">
@@ -362,6 +399,8 @@
           <weight>75</weight>
           <bold>true</bold>
           <underline>false</underline>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>true</kerning>
          </font>
         </property>
         <property name="text">
@@ -386,7 +425,7 @@
      <x>0</x>
      <y>0</y>
      <width>875</width>
-     <height>18</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -445,8 +484,14 @@
    <property name="allowedAreas">
     <set>Qt::TopToolBarArea</set>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextBesideIcon</enum>
+    <enum>Qt::ToolButtonFollowStyle</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
@@ -459,8 +504,8 @@
    </attribute>
    <addaction name="actionOpenIcon"/>
    <addaction name="actionSaveIcon"/>
-   <addaction name="actionConversion"/>
    <addaction name="actionCleartxt"/>
+   <addaction name="actionConversion"/>
   </widget>
   <action name="action_Open">
    <property name="text">
@@ -588,9 +633,12 @@
    </property>
   </action>
   <action name="actionOpenIcon">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons.qrc">
-     <normaloff>:/new/icons/8.png</normaloff>:/new/icons/8.png</iconset>
+     <normaloff>:/new/icons/icon3.svg</normaloff>:/new/icons/icon3.svg</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -602,7 +650,7 @@
   <action name="actionSaveIcon">
    <property name="icon">
     <iconset resource="Icons.qrc">
-     <normaloff>:/new/icons/121.png</normaloff>:/new/icons/121.png</iconset>
+     <normaloff>:/new/icons/icon1.svg</normaloff>:/new/icons/icon1.svg</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -614,7 +662,7 @@
   <action name="actionConversion">
    <property name="icon">
     <iconset resource="Icons.qrc">
-     <normaloff>:/new/icons/48.png</normaloff>:/new/icons/48.png</iconset>
+     <normaloff>:/new/icons/icon2.svg</normaloff>:/new/icons/icon2.svg</iconset>
    </property>
    <property name="text">
     <string>Conversion</string>
@@ -626,13 +674,19 @@
   <action name="actionCleartxt">
    <property name="icon">
     <iconset resource="Icons.qrc">
-     <normaloff>:/new/icons/38.png</normaloff>:/new/icons/38.png</iconset>
+     <normaloff>:/new/icons/icon5.svg</normaloff>:/new/icons/icon5.svg</iconset>
    </property>
    <property name="text">
     <string>Clear</string>
    </property>
+   <property name="iconText">
+    <string>Clear</string>
+   </property>
    <property name="toolTip">
     <string>Clear the text</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
    </property>
   </action>
  </widget>
@@ -742,7 +796,7 @@
   <slot>conversion()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

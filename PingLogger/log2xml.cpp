@@ -21,22 +21,21 @@ bool operator<(Log2xml& obj1, Log2xml& obj2){
 }
 
 void Log2xml::displayvect(vector<string>& text_out, int& min, int& max, int& avg, vector<Log2xml*>& v_lines){;
-    char buffer[10];
     string line;
     vector<Log2xml*>::iterator itera=v_lines.begin();
     line  = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
             "<pinglog>\n  <commande>\n    <date>\n      <jour>";
-    line += itoa((*itera)->XMLtime.day,buffer,10);
+    line += to_string((*itera)->XMLtime.day);
     line += "</jour>\n      <mois>";
-    line += itoa((*itera)->XMLtime.month,buffer,10);
+    line += to_string((*itera)->XMLtime.month);
     line += "</mois>\n      <annee>";
-    line += itoa((*itera)->XMLtime.year,buffer,10);
+    line += to_string((*itera)->XMLtime.year);
     line += "</annee>\n    </date>\n    <temps>\n      <heure>";
-    line += itoa((*itera)->XMLtime.hour,buffer,10);
+    line += to_string((*itera)->XMLtime.hour);
     line += "</heure>\n      <minute>";
-    line += itoa((*itera)->XMLtime.minute,buffer,10);
+    line += to_string((*itera)->XMLtime.minute);
     line += "</minute>\n      <seconde>";
-    line += itoa((*itera)->XMLtime.second,buffer,10);
+    line += to_string((*itera)->XMLtime.second);
     line += "</seconde>\n    </temps>";
     text_out.push_back(line);
     while(itera != v_lines.end()){
@@ -44,26 +43,26 @@ void Log2xml::displayvect(vector<string>& text_out, int& min, int& max, int& avg
         line  = "    <ligne>\n      <adresseip>";
         line += (*itera)->get_ip();
         line += "</adresseip>\n      <size>";
-        line += itoa((*itera)->get_size(),buffer,10);
+        line += to_string((*itera)->get_size());
         line += "</size>\n      <time>";
-        line += itoa((*itera)->get_time(),buffer,10);
+        line += to_string((*itera)->get_time());
         line += "</time>\n      <ttl>";
-        line += itoa((*itera)->get_ttl(),buffer,10);
+        line += to_string((*itera)->get_ttl());
         line += "</ttl>\n    </ligne>";
         text_out.push_back(line);
         ++itera;
     }
     line  = "    <minimum>";
     min   = (*min_element(v_lines.begin(),v_lines.end(),objComp))->get_time();
-    line += itoa(min,buffer,10);
+    line += to_string(min);
     line += "</minimum>\n"
             "    <maximum>";
     max   = (*max_element(v_lines.begin(),v_lines.end(),objComp))->get_time();
-    line += itoa(max,buffer,10);
+    line += to_string(max);
     line += "</maximum>\n"
             "    <moyenne>";
     avg  /= v_lines.size();
-    line += itoa(avg,buffer,10);
+    line += to_string(avg);
     line += "</moyenne>\n"
             "  </commande>\n"
             "</pinglog>";

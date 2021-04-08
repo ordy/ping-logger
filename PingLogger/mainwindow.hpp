@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFileDialog>
 #include <QtGui>
 #include "elemping.hpp"
 #include "log2txt.hpp"

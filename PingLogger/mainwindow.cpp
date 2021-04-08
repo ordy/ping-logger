@@ -1,5 +1,7 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
+#include <QDesktopWidget>
 
 using namespace std;
 
@@ -170,7 +172,6 @@ void MainWindow::saveFile(){
 //Preview the conversion before saving it
 void MainWindow::conversion(){
     int min=0, max=0, avg=0;
-    char res_time[6];
     ElemPing *pelem=NULL;
     //Simulating a file with a string vector
     vector<string> conversion;
@@ -221,9 +222,9 @@ void MainWindow::conversion(){
         for(line=conversion.begin();line != conversion.end();++line)
             ui->textBrowser_res->append(QString((*line).c_str()));
         //Set the minumum, maximum and average results
-        ui->min_line->setText(itoa(min,res_time,10));
-        ui->max_line->setText(itoa(max,res_time,10));
-        ui->avg_line->setText(itoa(avg,res_time,10));
+        ui->min_line->setText(QString::number(min));
+        ui->max_line->setText(QString::number(max));
+        ui->avg_line->setText(QString::number(avg));
         Fin.close();
     }
 }

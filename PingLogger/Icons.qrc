@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/new/icons">
-        <file>8.png</file>
-        <file>48.png</file>
-        <file>121.png</file>
-        <file>38.png</file>
+        <file>icon5.svg</file>
+        <file>icon2.svg</file>
+        <file>icon1.svg</file>
+        <file>icon3.svg</file>
+        <file>icon4.svg</file>
     </qresource>
 </RCC>

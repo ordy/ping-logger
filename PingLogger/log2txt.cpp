@@ -22,7 +22,6 @@ bool operator< (Log2txt& obj1, Log2txt& obj2){
 }
 
 void Log2txt::displayvect(vector<string>& text_out, int& min, int& max, int& avg, vector<Log2txt*>& cp_lines){
-    char buffer[10];
     string line;
     vector<Log2txt*>::iterator itera;
     text_out.push_back("ADRESSE IP;SIZE;TIME;TTL");
@@ -30,26 +29,26 @@ void Log2txt::displayvect(vector<string>& text_out, int& min, int& max, int& avg
         avg  += (*itera)->get_time();
         line  = (*itera)->get_ip();
         line += (";");
-        line += (itoa((*itera)->get_size(),buffer,10));
+        line += to_string((*itera)->get_size());
         line += (";");
-        line += (itoa((*itera)->get_time(),buffer,10));
+        line += to_string((*itera)->get_time());
         line += (";");
-        line += (itoa((*itera)->get_ttl(),buffer,10));
+        line += to_string((*itera)->get_ttl());
         text_out.push_back(line);
     }
     line = "MINIMUM;--;";
     min = (*min_element((cp_lines.begin()),(cp_lines.end()),objComp))->get_time();
-    line += (itoa(min,buffer,10));
+    line += to_string(min);
     line += (";--");
     text_out.push_back(line);
     line = "MAXIMUM;--;";
     max = (*max_element((cp_lines.begin()),(cp_lines.end()),objComp))->get_time();
-    line += (itoa(max,buffer,10));
+    line += to_string(max);
     line += (";--");
     text_out.push_back(line);
     line = "MOYENNE;--;";
     avg = avg/cp_lines.size();
-    line += (itoa(avg,buffer,10));
+    line += to_string(avg);
     line += (";--");
     text_out.push_back(line);
 }
